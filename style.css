@@ -1,0 +1,632 @@
+
+/*--------------- basic styling --------------- */
+@import url(//db.onlinewebfonts.com/c/68b898f6044bbee439423445076f3168?family=Roxborough+CF+Thin);
+@font-face {font-family: "Roxborough CF Thin"; src: url("//db.onlinewebfonts.com/t/68b898f6044bbee439423445076f3168.eot"); src: url("//db.onlinewebfonts.com/t/68b898f6044bbee439423445076f3168.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/68b898f6044bbee439423445076f3168.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/68b898f6044bbee439423445076f3168.woff") format("woff"), url("//db.onlinewebfonts.com/t/68b898f6044bbee439423445076f3168.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/68b898f6044bbee439423445076f3168.svg#Roxborough CF Thin") format("svg"); }
+
+@font-face {font-family: "Cosi Azure Black Stencil"; src: url("//db.onlinewebfonts.com/t/067cc4a05526cc8001ffbe6a576eace4.eot"); src: url("//db.onlinewebfonts.com/t/067cc4a05526cc8001ffbe6a576eace4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/067cc4a05526cc8001ffbe6a576eace4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/067cc4a05526cc8001ffbe6a576eace4.woff") format("woff"), url("//db.onlinewebfonts.com/t/067cc4a05526cc8001ffbe6a576eace4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/067cc4a05526cc8001ffbe6a576eace4.svg#Cosi Azure Black Stencil") format("svg"); }
+@import url(//db.onlinewebfonts.com/c/61486c71563f7840de6d1c7e0a2ed07e?family=Cosi+Azure+Bold);
+html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background:#fff !important;
+      color: rgb(0, 0, 0) !important;
+}
+
+.whitespace {
+      width: 100%;
+      height: 100px;
+}
+
+@media(max-width: 768px) {
+      .whitespace {
+            display: none;
+      }
+}
+
+.link:after {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      display: block;
+      width: 0%;
+      height: 2px;
+      background-color: #e2b2b7;
+      content: "";
+      transition: ease-in-out 0.2s;
+    }
+    
+    .link:hover:after {
+      
+      background-color: #e2b2b7;
+      width: 90%;
+    }
+
+
+/*--------------- typewriter effect --------------- */
+.line {
+      background-image: url(https://i.etsystatic.com/11056442/r/il/cafaa7/1383065032/il_1588xN.1383065032_n2ir.jpg);
+      width: 24em;
+      top: 50%;
+      background-size: 50%;
+
+}
+
+/* loader  */
+
+.loader-wrapper {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: rgb(221, 172, 172);
+      z-index: 2;
+    }
+    
+    .loader {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      font-size: 40px;
+      transform: translate(-50%, -50%);
+      color:#fff;
+      z-index: 2;
+    }
+
+
+/*--------------- navigation --------------- */
+nav {
+      font-family: "Roxborough CF Thin";
+      width: 100%;
+      background: #fff;
+      height: 80px;
+      position: fixed;
+      z-index: 1;
+      
+}
+
+nav #brand {
+      float: left;
+      display: block;
+      margin-left: 82px;
+      line-height: 80px;    
+}
+
+nav #brand a {
+      letter-spacing: 1px;
+      color: rgb(0, 0, 0);
+      transition: all 0.3s ease-out;
+      border-bottom: 2px solid #e2b2b7;
+      padding-bottom: 5px;
+}
+
+nav #brand a:hover {
+      text-decoration: none;
+}
+
+nav #menu {
+      text-align: justify;
+      right: 80px;
+      position: fixed;
+}
+
+nav #menu li {
+      padding-left: 40px;
+      display: inline-block;
+      cursor: pointer;
+      font-weight: 300;
+      line-height: 80px;
+      position: relative;
+      transition: all 0.3s ease-out;
+}
+
+nav #menu li span {
+      font-weight: 700;
+}
+
+nav #menu li a {
+      color: rgb(0, 0, 0);
+}
+
+nav #menu li a:hover {
+      text-decoration: none;
+}
+
+#toggle {
+      position: absolute;
+      right: 30px;
+      top: 20px;
+      font-weight: 300;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      float: right;
+      transition: all 0.3s ease-out;
+      visibility: hidden;
+      opacity: 0;
+}
+
+.close-btn  {
+      color: #fff;
+      position: absolute;
+      right: 35px;
+      top:25px;
+      font-weight: 300;
+      z-index: 2;
+      cursor: pointer;
+      font-size: 24px;
+      line-height: 80px;
+}
+
+
+#resize {
+      z-index: 1;
+      top: 0px;
+      position: fixed;
+      background: rgb(221, 172, 172);
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s ease-out;
+}
+
+#resize #menu {
+      height: 90px;
+      position: absolute;
+      left: 45%;
+      transform: translateX(-40%);
+      text-align: center;
+      display: table-cell;
+      vertical-align: center;
+}
+
+#resize #menu li {
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 50px;
+      min-height: 50px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+      margin-top: 140px;
+}
+
+#resize #menu li a {
+      color: rgb(255, 255, 255);
+}
+
+#resize #menu li a:hover {
+      text-decoration: none;
+}
+
+#resize.active {
+      visibility: visible;
+      opacity: 1;
+}
+
+@media(max-width: 768px) {
+      #toggle {
+            visibility: visible;
+            opacity: 1;
+            margin-top: 6px;
+            margin-right: 4px;
+      }
+
+      nav #brand {
+            margin-left: 24px;
+      }
+
+      #menu a {
+            font-size: 20px;
+            font-weight: 300;
+      }
+
+      #resize li span {
+            font-weight: bolder;
+      }
+
+      nav #menu {
+            display: none;
+      }
+}
+
+@media(min-width: 768px) {
+      #resize {
+            visibility: hidden !important;
+      }
+}
+
+/*--------------- hero section --------------- */
+
+
+.logo-wrapper{
+      padding-top: 5%;
+      background-image:url('./img/1.png');
+      background-position: 50%;
+      background-size: 100%;
+      margin:  0 50px;
+
+}
+.logo {
+      margin: auto;
+      width: 700px;
+      padding-top: 10px;
+      height: 530px;
+}
+
+
+
+@media(max-width:700px){
+
+      .logo-wrapper{
+            padding-top: 10px;
+            background-image:url('./img/1.png');
+            background-position: 50% ;
+            background-size: 170%;
+            background-repeat: no-repeat;
+      }
+
+      .logo {
+            margin: auto;
+            width: 100%;
+      }
+      
+
+}
+
+
+/*--------------- scroll down icon animation --------------- */
+.scroll-down {
+      position: absolute;
+      left: 49%;
+      bottom: 100px;
+      display: block;
+      text-align: center;
+      font-size: 15px;
+      z-index: 0;
+      text-decoration: none;
+      text-shadow: 0;
+      width: 13px;
+      height: 13px;
+      border-bottom: 5px solid rgb(255, 255, 255);
+      border-right: 5px solid rgb(255, 255, 255);
+      -webkit-transform: translate(-50%, 0) rotate(45deg);
+      animation: fade_move_down 3s cubic-bezier(0.19, 1, 0.22, 1) infinite;
+}
+
+@keyframes fade_move_down {
+      0% {
+            transform: translate(0, -10px) rotate(45deg);
+            opacity: 0;
+      }
+      0% {
+            opacity: 1;
+      }
+      100% {
+            transform: translate(0, 5px) rotate(45deg);
+            opacity: 0;
+      }
+}
+
+/*--------------- projects section --------------- */
+h6 {
+      text-align: center;
+}
+
+.vertical {
+      margin-top: 40px;
+      height: 80px;
+      position: absolute;
+      left: 40%;
+}
+
+.project {
+      height: 500px;
+}
+
+.project1 {
+      background: url(https://i.pinimg.com/564x/05/36/5d/05365de990be1be3557d158a449f02d4.jpg) no-repeat 50% 50%;
+      background-size: cover;
+      background-size: 90%;
+}
+
+.project1::after {
+      font-family: "Roxborough CF Thin";
+      content: "Manicure i Pedicure";
+      font-size: 36px;
+      position: relative;
+      color: rgb(0, 0, 0);
+      display: block;
+      top: 8%;
+      left: -90%;
+      right: 0;
+      bottom: 0;
+}
+
+.project2 {
+      background: url(https://i.pinimg.com/564x/d4/93/cf/d493cf1c2864e62672b9cb30f1c341ef.jpg) no-repeat 50% 50%;
+      background-size: cover;
+      background-size: 50%;
+}
+
+.project2::after {
+      content: "Henna i regulacja brwi";
+      font-family: "Roxborough CF Thin";
+      font-size: 36px;
+      position: relative;
+      color: rgb(0, 0, 0);
+      display: block;
+      top: 80%;
+      left: 105%;
+      right: 0;
+      bottom: 0;
+}
+
+.project3 {
+      background: url(https://i.pinimg.com/564x/5a/78/97/5a7897453d57949dc3899163c5d6e12a.jpg) no-repeat 50% 50%;
+      background-size: cover;
+}
+
+.project3::after {
+      content: "Lifting i laminacja rzes";
+      font-family: "Roxborough CF Thin";
+      font-size: 36px;
+      position: relative;
+      color: rgb(0, 0, 0);
+      display: block;
+      top: 80%;
+      left: -100%;
+      right: 0;
+      bottom: 0;
+}
+
+.project4 {
+      background: url(https://i.pinimg.com/564x/72/59/00/72590025c506beaddffe9ba43812cd5c.jpg) no-repeat 50% 50%;
+      background-size: cover;
+      background-size: 70%;
+}
+
+.project4::after {
+      font-family: "Roxborough CF Thin";
+      content: "Zabiegi pielegnacyjne";
+      font-size: 36px;
+      position: relative;
+      color: rgb(0, 0, 0);
+      display: block;
+      top: 10%;
+      left: 90%;
+      right: 0;
+      bottom: 0;
+}
+
+@media(max-width: 768px) {
+      .project {
+            width: 90% !important;
+            margin: 14px auto;
+      }
+
+      .vertical {
+            display: none;
+      }
+
+      .project1::after, .project2::after, .project3::after, .project4::after {
+            display: none;
+      }
+}
+
+/*--------------- footer section --------------- */
+.footer{
+      background: rgb(221, 172, 172);
+}
+
+.collab {
+      text-align: right;
+}
+
+.collab p {
+      font-weight: lighter !important;
+      margin-bottom: 20px;
+}
+
+.hr {
+      background: rgba(255, 255, 255, 0.2);
+      height: 1px;
+}
+
+.info h4 {
+      font-family: "Roxborough CF Thin";
+      font-size: 18px;
+      font-weight: lighter;
+}
+
+.info p {
+      text-transform: uppercase;
+      color: rgb(255, 255, 255);
+      font-weight: lighter;
+}
+
+.info li {
+      font-weight: lighter;
+      color: #fff;
+      font-size: 18px;
+      padding-left: 20px;
+}
+
+
+
+ul ion-icon {
+      font-size: 34px;
+      color: rgb(255, 255, 255);
+      padding:10px;
+      margin-left: 0 55px;
+      transition: 0.5s ease-in-out;
+}
+
+ul ion-icon:hover{
+      cursor: pointer;
+      color: rgb(0, 0, 0);
+     
+
+}
+
+
+
+
+#media, #address {
+      text-align: right;
+}
+
+#media ul {
+      list-style: none;
+}
+
+#media ul li {
+      display: inline-block;
+}
+
+@media(max-width: 768px) {
+      .collab, #personal, #media, #address {
+            text-align: center;
+      }
+
+      .info ul {
+            margin: 0 0 0 -22px;
+            padding: 0;
+      }
+}
+
+/*--------------- work page --------------- */
+
+.hero-content {
+      margin-left: 0%;
+}
+
+.hero-content p {
+      font-weight: 300;
+      line-height: 36px;
+      color: grey;
+}
+
+.hero-content h3 {
+      text-align: left;
+      font-family: "Roxborough CF Thin";
+}
+
+@media(max-width: 768px) {
+      .hero-content {
+            padding-top: 50px;
+            width: 96%;
+            margin: 0 auto;
+      }
+}
+
+/*---------------about page --------------- */
+
+.about {
+      height: 500px;
+      margin-top: 120px;
+}
+
+.image {
+      background: url(https://images.unsplash.com/photo-1540885762261-a2ca01f290f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2468&q=80) no-repeat 50% 70%;
+}
+
+/*--------------- contact form --------------- */
+
+#contact-form {
+      margin: 5% 1.4%;
+      font-family: "Roxborough CF Thin";
+      
+}
+
+#contact-form ul {
+      list-style: none;
+      border-radius: 5px;
+      margin-bottom: 40px;
+}
+
+#contact-form li {
+      padding: 10px;
+}
+
+#contact-form li:last-of-type {
+      border-bottom: none;
+}
+
+#contact-form label {
+      display: block;
+      font-size: .8em;
+      color: #999;
+      padding-left: 5px;
+}
+
+#contact-form input, #contact-form textarea {
+      width: 100%;
+      padding: 5px;
+      border: none;
+      resize: vertical;
+      background: transparent;
+      color: rgb(0, 0, 0);
+      font-weight: bolder;
+}
+
+input:focus {
+      outline: none;
+      border: none;
+}
+
+textarea:focus {
+      outline: none;
+      border: none;
+}
+
+.textarea {
+      border-bottom: 1px solid #575757;
+}
+
+.send {
+      font-family: "Roxborough CF Thin";
+      margin-left: 50px;
+      text-transform: uppercase;
+      padding: 20px 30px;
+      background: transparent;
+      color:rgb(0, 0, 0);;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      transition: 0.5s ease-in-out;
+      border: 1px solid #e2b2b7;
+}
+
+.send:hover {
+      cursor: pointer;
+      background: rgb(221, 172, 172);
+      color: #ffffff;
+}
+
+@media(max-width: 768px) {
+      #contact-form {
+            margin: 5% -8%;
+            width: 98%;
+      }
+}
+
+/*--------------- project page --------------- */
+
+.prev, .next p {
+      color: grey;
+}
+
+.prev p {
+      text-align: left;
+}
+
+.next p {
+      text-align: right;
+}
